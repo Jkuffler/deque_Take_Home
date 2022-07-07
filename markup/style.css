@@ -1,0 +1,29 @@
+body {
+  background: url("../resources/paul-hanaoka-bookshelf-unsplash.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: rgb(61, 124, 77);
+}
+
+
+h2, h3 {
+  font-family: Verdana, Tahoma, sans-serif;
+  color:rgb(1, 1, 1);
+  font-weight: bold;
+  position: relative;
+}
+  #title {
+    padding-top: 35%;
+    padding-bottom: 2%;
+  }
+
+
+.book-list {
+  opacity: 1;
+  margin-top: 50px;
+  visibility: hidden;
+}
+

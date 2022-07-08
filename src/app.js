@@ -1,19 +1,37 @@
+const aKey = "AIzaSyBxFPi1cP6NOlvllPSvAcGpZr0afgV19wk"
+const placeholder = document.createElement('img src=../resources/elena-joland-unsplash.jpg')
+const title = document.getElementById("#title");
 const resultsList = document.getElementById("list-output");
 const volumeUrl = "https://www.googleapis.com/books/v1/volumes?q=";
-const aKey = "AIzaSyBxFPi1cP6NOlvllPSvAcGpZr0afgV19wk"
-const placeholder = "<img src='../resources/elena-joland-unsplash.jpg>"
-let responseTime, authors, publishDates, publisher, contentLink, coverImg, volumeLink, totalResults;
-let searchResults;
+const searchTerms = document.getElementById("#search")
+let volume, responseTime, authors, publishDates, publisher, coverImg, volumeLink, searchParams; 
 
-const searchTerms = document.getElementById("search")
+searchTerms.addEventListener("click", getResults )
+
+
 
 const getResults = function() {
   resultsList.innerHTML = "";
-  searchResults = searchTerms.val
+  searchParams = searchTerms.value;
+  if(searchParams === "" || searchParams === null) {
+    alert("Please enter valid search terms")
+  } else {
+    fetch( volumeUrl+searchParams )
+    .then( res => res.json() )
+    .then (searchResults => searchResults.forEach( result => renderResult(result) ))
+    }
 }
+console.log(searchResults)
+
+
 
 function renderResult(result) {
+  if (result === undefined || result === null) {
+    alert("No matches found for the provided search term(s)");
+  } else {
+    title.animate({'marginTop': '5px'}, 1000);
 
+  }
 }
 
 function getTotalResults() {

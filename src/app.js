@@ -1,14 +1,13 @@
 const aKey = "AIzaSyBxFPi1cP6NOlvllPSvAcGpZr0afgV19wk"
-const placeholder = document.createElement('img src=../resources/elena-joland-unsplash.jpg')
 const title = document.getElementById("#title");
 const resultsList = document.getElementById("list-output");
 const volumeUrl = "https://www.googleapis.com/books/v1/volumes?q=";
+const placeholder = "<img src='../resources/elena-joland-unsplash.jpg' alt='Default Cover'>"
 const searchTerms = document.getElementById("#search")
+
 let volume, responseTime, authors, publishDates, publisher, coverImg, volumeLink, searchParams; 
 
 searchTerms.addEventListener("click", getResults )
-
-
 
 const getResults = function() {
   resultsList.innerHTML = "";
@@ -40,6 +39,3 @@ fetch(volumeUrl)
 .then( searchResults => searchResults.forEach( result => renderResult(result) ))
 
 }
-// document.createElement("IMG");
-// placeholder.setAttribute("src","../resources/elena-joland-unsplash.jpg");
-// placeholder.setAttribute("alt","Default Cover");

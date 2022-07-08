@@ -13,7 +13,7 @@ const getResults = function() {
 }
 
 function renderResult(result) {
-  
+
 }
 
 function getTotalResults() {
